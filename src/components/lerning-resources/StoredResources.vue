@@ -15,7 +15,7 @@
 import LerningResources from "./LerningResources";
 
 export default {
-  props: ["resources"],
+  inject: ["resources"],
   components: {
     LerningResources,
   },
