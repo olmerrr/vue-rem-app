@@ -3,6 +3,7 @@
     <lerning-resources
       v-for="res in resources"
       :key="res.id"
+      :id="res.id"
       :title="res.title"
       :description="res.description"
       :link="res.link"
