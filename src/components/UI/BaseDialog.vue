@@ -1,5 +1,6 @@
 <template>
-  <div @click="$emit('close')"></div>
+  <teleport to="body">
+    <div @click="$emit('close')"></div>
     <dialog open>
       <header>
         <slot name="header">
@@ -15,23 +16,24 @@
         </slot>
       </menu>
     </dialog>
+  </teleport>
 </template>
 
 <script>
-import BaseButton from './BaseButton.vue';
-  export default {
+import BaseButton from "./BaseButton.vue";
+export default {
   components: { BaseButton },
-    props: {
-      title: {
-        type: String,
-        required: false
-      },
-      },
-    emits: ['close'],
-  };
+  props: {
+    title: {
+      type: String,
+      required: false,
+    },
+  },
+  emits: ["close"],
+};
 </script>
 <style scoped>
-  div {
+div {
   position: fixed;
   top: 0;
   left: 0;
